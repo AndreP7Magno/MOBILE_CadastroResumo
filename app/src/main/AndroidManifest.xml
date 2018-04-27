@@ -8,13 +8,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CadastroPessoalActivity"
+            android:label="@string/title_activity_cadastro_pessoal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CadastroCursoActivity"
+            android:label="@string/title_activity_cadastro_curso"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ResumoActivity"
+            android:label="@string/title_activity_resumo"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>

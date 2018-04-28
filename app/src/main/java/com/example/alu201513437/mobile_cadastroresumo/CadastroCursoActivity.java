@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -48,7 +49,9 @@ public class CadastroCursoActivity extends AppCompatActivity {
     }
 
     private void btnMostrarClick(View view) {
-        Intent resumo = new Intent( this, ResumoActivity.class);
+        if(Valida())
+        {
+            Intent resumo = new Intent( this, ResumoActivity.class);
 
         resumo.putExtra("txtNome", txtNome);
         resumo.putExtra("txtLogradouro",txtLogradouro);
@@ -62,4 +65,40 @@ public class CadastroCursoActivity extends AppCompatActivity {
 
         startActivity(resumo);
     }
+        else
+            onLoginFailed();
+
+    }
+
+    private boolean Valida() {
+        boolean valid = true;
+
+        String curso = txtCurso.getText().toString();
+        String turno = txtTurno.getText().toString();
+        String faculdade = txtFaculdade.getText().toString();
+
+        if (curso.isEmpty()) {
+            txtCurso.setError("Digite seu curso!");
+            valid = false;
+        } else if (turno.isEmpty()){
+            txtTurno.setError("Digite o turno!");
+            valid = false;
+        } else if (faculdade.isEmpty()){
+            txtFaculdade.setError("Digite a sua faculdade!");
+            valid = false;
+        }
+        else
+        {
+            txtCurso.setError(null);
+            txtTurno.setError(null);
+            txtFaculdade.setError(null);
+        }
+
+        return valid;
+    }
+
+    private void onLoginFailed() {
+        Toast.makeText(getBaseContext(), "Preencha todos os campos!", Toast.LENGTH_LONG).show();
+    }
+
 }

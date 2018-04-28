@@ -65,10 +65,9 @@ public class CadastroCursoActivity extends AppCompatActivity {
 
         startActivity(resumo);
     }
-        else{
-
+        else
             onLoginFailed();
-        }
+
     }
 
     private boolean Valida() {

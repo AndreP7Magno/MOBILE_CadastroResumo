@@ -91,6 +91,11 @@ public class CadastroPessoalActivity extends AppCompatActivity {
         return valid;
     }
 
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
+
     public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "Erro ao prosseguir!", Toast.LENGTH_LONG).show();
 

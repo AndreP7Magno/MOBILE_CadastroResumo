@@ -21,6 +21,9 @@
             <EditText android:id="@+id/input_nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                android:scrollHorizontally="true"
                 android:hint="Nome" />
 
         </android.support.design.widget.TextInputLayout>
@@ -34,6 +37,9 @@
             <EditText android:id="@+id/input_logradouro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                android:scrollHorizontally="true"
                 android:hint="Logradouro"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -48,6 +54,9 @@
             <EditText android:id="@+id/input_numero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                android:scrollHorizontally="true"
                 android:hint="Número"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -61,6 +70,9 @@
             <EditText android:id="@+id/input_Bairro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                android:scrollHorizontally="true"
                 android:hint="Bairro"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -74,6 +86,9 @@
             <EditText android:id="@+id/input_Cidade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                android:scrollHorizontally="true"
                 android:hint="Cidade"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -87,6 +102,9 @@
             <EditText android:id="@+id/input_telefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:inputType="text"
+                android:scrollHorizontally="true"
                 android:hint="Telefone"/>
 
         </android.support.design.widget.TextInputLayout>

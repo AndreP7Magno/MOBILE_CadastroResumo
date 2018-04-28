@@ -32,12 +32,12 @@ public class CadastroCursoActivity extends AppCompatActivity {
 
         Intent cadastroCurso = getIntent();
 
-        txtNome.setText(cadastroCurso.getStringExtra("input_nome"));
-        txtLogradouro.setText(cadastroCurso.getStringExtra("input_logradouro"));
-        txtNumero.setText(cadastroCurso.getStringExtra("input_numero"));
-        txtBairro.setText(cadastroCurso.getStringExtra("input_bairro"));
-        txtCidade.setText(cadastroCurso.getStringExtra("input_cidade"));
-        txtTelefone.setText(cadastroCurso.getStringExtra("input_telefone"));
+        txtNome.setText(cadastroCurso.getStringExtra("nome"));
+        txtLogradouro.setText(cadastroCurso.getStringExtra("logradouro"));
+        txtNumero.setText(cadastroCurso.getStringExtra("numero"));
+        txtBairro.setText(cadastroCurso.getStringExtra("bairro"));
+        txtCidade.setText(cadastroCurso.getStringExtra("cidade"));
+        txtTelefone.setText(cadastroCurso.getStringExtra("telefone"));
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +53,7 @@ public class CadastroCursoActivity extends AppCompatActivity {
 
         resumo.putExtra("txtNome",txtNome.getText().toString());
         resumo.putExtra("txtLogradouro",txtLogradouro.getText().toString());
-        resumo.putExtra("txtNome",txtNumero.getText().toString());
+        resumo.putExtra("txtNumero",txtNumero.getText().toString());
         resumo.putExtra("txtBairro",txtBairro.getText().toString());
         resumo.putExtra("txtCidade",txtCidade.getText().toString());
         resumo.putExtra("txtTelefone",txtTelefone.getText().toString());

@@ -98,15 +98,17 @@ public class CadastroPessoalActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
-        Intent resumo = new Intent( this, CadastroCursoActivity.class);
+        Intent cadastroCurso = new Intent( this, CadastroCursoActivity.class);
 
-        resumo.putExtra("nome", _nomeText.getText().toString());
-        resumo.putExtra("logradouro",_logradouroText.getText().toString());
-        resumo.putExtra("numero",_NumeroText.getText().toString());
-        resumo.putExtra("bairro",_BairroText.getText().toString());
-        resumo.putExtra("cidade",_CidadeText.getText().toString());
-        resumo.putExtra("telefone",_TelefoneText.getText().toString());
+        cadastroCurso.putExtra("nome", _nomeText.getText().toString());
+        cadastroCurso.putExtra("logradouro",_logradouroText.getText().toString());
+        cadastroCurso.putExtra("numero",_NumeroText.getText().toString());
+        cadastroCurso.putExtra("bairro",_BairroText.getText().toString());
+        cadastroCurso.putExtra("cidade",_CidadeText.getText().toString());
+        cadastroCurso.putExtra("telefone",_TelefoneText.getText().toString());
 
-        startActivity(resumo);
+        startActivity(cadastroCurso);
+
+        _ProsseguirButton.setEnabled(true);
     }
 }

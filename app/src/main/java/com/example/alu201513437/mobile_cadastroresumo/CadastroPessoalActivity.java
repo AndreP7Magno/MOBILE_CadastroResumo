@@ -45,13 +45,13 @@ public class CadastroPessoalActivity extends AppCompatActivity {
 
     private void Prosseguir() {
         if (!Valido()) {
-            onLoginFailed();
+            onProsseguirFailed();
             return;
         }
 
         _ProsseguirButton.setEnabled(false);
 
-        onLoginSuccess();
+        onProsseguirSuccess();
     }
 
     private boolean Valido() {
@@ -99,13 +99,13 @@ public class CadastroPessoalActivity extends AppCompatActivity {
         moveTaskToBack(true);
     }
 
-    public void onLoginFailed() {
-        Toast.makeText(getBaseContext(), "Erro ao prosseguir!", Toast.LENGTH_LONG).show();
+    public void onProsseguirFailed() {
+        Toast.makeText(getBaseContext(), "Preencha todos os campos!", Toast.LENGTH_LONG).show();
 
         _ProsseguirButton.setEnabled(true);
     }
 
-    public void onLoginSuccess() {
+    public void onProsseguirSuccess() {
         Intent cadastroCurso = new Intent(this, CadastroCursoActivity.class);
 
         cadastroCurso.putExtra("nome", _nomeText.getText().toString());

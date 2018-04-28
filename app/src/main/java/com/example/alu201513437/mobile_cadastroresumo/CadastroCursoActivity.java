@@ -47,32 +47,25 @@ public class CadastroCursoActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnMostrarClick(view);
+                Prosseguir();
             }
         });
     }
 
-    private void btnMostrarClick(View view) {
-        if (Valida()) {
-            Intent resumo = new Intent(this, ResumoActivity.class);
+    private void Prosseguir()
+    {
+        if (!Valido()) {
+            onProsseguirFailed();
+            return;
+        }
 
-            resumo.putExtra("txtNome", txtNome);
-            resumo.putExtra("txtLogradouro", txtLogradouro);
-            resumo.putExtra("txtNumero", txtNumero);
-            resumo.putExtra("txtBairro", txtBairro);
-            resumo.putExtra("txtCidade", txtCidade);
-            resumo.putExtra("txtTelefone", txtTelefone);
-            resumo.putExtra("txtCurso", txtCurso.getText().toString());
-            resumo.putExtra("txtTurno", txtTurno.getText().toString());
-            resumo.putExtra("txtFaculdade", txtFaculdade.getText().toString());
+        btnSubmit.setEnabled(false);
 
-            startActivity(resumo);
-        } else
-            onLoginFailed();
-
+        onProsseguirSuccess();
     }
 
-    private boolean Valida() {
+
+    private boolean Valido() {
         boolean valid = true;
 
         String curso = txtCurso.getText().toString();
@@ -97,8 +90,28 @@ public class CadastroCursoActivity extends AppCompatActivity {
         return valid;
     }
 
-    private void onLoginFailed() {
+    private void onProsseguirFailed() {
         Toast.makeText(getBaseContext(), "Preencha todos os campos!", Toast.LENGTH_LONG).show();
+
+        btnSubmit.setEnabled(true);
+    }
+
+    public void onProsseguirSuccess() {
+        Intent resumo = new Intent(this, ResumoActivity.class);
+
+        resumo.putExtra("txtNome", txtNome);
+        resumo.putExtra("txtLogradouro", txtLogradouro);
+        resumo.putExtra("txtNumero", txtNumero);
+        resumo.putExtra("txtBairro", txtBairro);
+        resumo.putExtra("txtCidade", txtCidade);
+        resumo.putExtra("txtTelefone", txtTelefone);
+        resumo.putExtra("txtCurso", txtCurso.getText().toString());
+        resumo.putExtra("txtTurno", txtTurno.getText().toString());
+        resumo.putExtra("txtFaculdade", txtFaculdade.getText().toString());
+
+        startActivity(resumo);
+
+        btnSubmit.setEnabled(true);
     }
 
 }

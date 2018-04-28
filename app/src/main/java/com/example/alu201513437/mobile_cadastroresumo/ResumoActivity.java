@@ -4,19 +4,24 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class ResumoActivity extends AppCompatActivity {
 
-    @InjectView(R.id.txtNome) TextView txtNome;
-    @InjectView(R.id.txtLogradouroNumero) TextView txtLogradouroNumero;
-    @InjectView(R.id.txtBairroCidade) TextView txtBairroCidade;
-    @InjectView(R.id.txtTelefone) TextView txtTelefone;
-    @InjectView(R.id.txtFaculdade) TextView txtFaculdade;
-    @InjectView(R.id.txtCursoTurno) TextView txtCursoTurno;
+    @InjectView(R.id.txtNome)
+    EditText txtNome;
+    @InjectView(R.id.txtLogradouroNumero)
+    EditText txtLogradouroNumero;
+    @InjectView(R.id.txtBairroCidade)
+    EditText txtBairroCidade;
+    @InjectView(R.id.txtTelefone)
+    EditText txtTelefone;
+    @InjectView(R.id.txtFaculdade)
+    EditText txtFaculdade;
+    @InjectView(R.id.txtCursoTurno)
+    EditText txtCursoTurno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

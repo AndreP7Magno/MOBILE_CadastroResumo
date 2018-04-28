@@ -20,10 +20,14 @@ public class CadastroCursoActivity extends AppCompatActivity {
     private String txtCidade;
     private String txtTelefone;
 
-    @InjectView(R.id.txtCurso) EditText txtCurso;
-    @InjectView(R.id.txtTurno) EditText txtTurno;
-    @InjectView(R.id.txtFaculdade) EditText txtFaculdade;
-    @InjectView(R.id.btnSubmit) Button btnSubmit;
+    @InjectView(R.id.txtCurso)
+    EditText txtCurso;
+    @InjectView(R.id.txtTurno)
+    EditText txtTurno;
+    @InjectView(R.id.txtFaculdade)
+    EditText txtFaculdade;
+    @InjectView(R.id.btnSubmit)
+    Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,23 +53,21 @@ public class CadastroCursoActivity extends AppCompatActivity {
     }
 
     private void btnMostrarClick(View view) {
-        if(Valida())
-        {
-            Intent resumo = new Intent( this, ResumoActivity.class);
+        if (Valida()) {
+            Intent resumo = new Intent(this, ResumoActivity.class);
 
-        resumo.putExtra("txtNome", txtNome);
-        resumo.putExtra("txtLogradouro",txtLogradouro);
-        resumo.putExtra("txtNumero",txtNumero);
-        resumo.putExtra("txtBairro",txtBairro);
-        resumo.putExtra("txtCidade",txtCidade);
-        resumo.putExtra("txtTelefone",txtTelefone);
-        resumo.putExtra("txtCurso",txtCurso.getText().toString());
-        resumo.putExtra("txtTurno",txtTurno.getText().toString());
-        resumo.putExtra("txtFaculdade",txtFaculdade.getText().toString());
+            resumo.putExtra("txtNome", txtNome);
+            resumo.putExtra("txtLogradouro", txtLogradouro);
+            resumo.putExtra("txtNumero", txtNumero);
+            resumo.putExtra("txtBairro", txtBairro);
+            resumo.putExtra("txtCidade", txtCidade);
+            resumo.putExtra("txtTelefone", txtTelefone);
+            resumo.putExtra("txtCurso", txtCurso.getText().toString());
+            resumo.putExtra("txtTurno", txtTurno.getText().toString());
+            resumo.putExtra("txtFaculdade", txtFaculdade.getText().toString());
 
-        startActivity(resumo);
-    }
-        else
+            startActivity(resumo);
+        } else
             onLoginFailed();
 
     }
@@ -80,15 +82,13 @@ public class CadastroCursoActivity extends AppCompatActivity {
         if (curso.isEmpty()) {
             txtCurso.setError("Digite seu curso!");
             valid = false;
-        } else if (turno.isEmpty()){
+        } else if (turno.isEmpty()) {
             txtTurno.setError("Digite o turno!");
             valid = false;
-        } else if (faculdade.isEmpty()){
+        } else if (faculdade.isEmpty()) {
             txtFaculdade.setError("Digite a sua faculdade!");
             valid = false;
-        }
-        else
-        {
+        } else {
             txtCurso.setError(null);
             txtTurno.setError(null);
             txtFaculdade.setError(null);

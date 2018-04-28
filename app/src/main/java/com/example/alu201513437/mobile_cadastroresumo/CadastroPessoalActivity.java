@@ -13,13 +13,20 @@ import butterknife.InjectView;
 
 public class CadastroPessoalActivity extends AppCompatActivity {
 
-    @InjectView(R.id.input_nome) EditText _nomeText;
-    @InjectView(R.id.input_logradouro) EditText _logradouroText;
-    @InjectView(R.id.input_numero) EditText _NumeroText;
-    @InjectView(R.id.input_Bairro) EditText _BairroText;
-    @InjectView(R.id.input_Cidade) EditText _CidadeText;
-    @InjectView(R.id.input_telefone) EditText _TelefoneText;
-    @InjectView(R.id.btn_continuar) Button _ProsseguirButton;
+    @InjectView(R.id.input_nome)
+    EditText _nomeText;
+    @InjectView(R.id.input_logradouro)
+    EditText _logradouroText;
+    @InjectView(R.id.input_numero)
+    EditText _NumeroText;
+    @InjectView(R.id.input_Bairro)
+    EditText _BairroText;
+    @InjectView(R.id.input_Cidade)
+    EditText _CidadeText;
+    @InjectView(R.id.input_telefone)
+    EditText _TelefoneText;
+    @InjectView(R.id.btn_continuar)
+    Button _ProsseguirButton;
 
 
     @Override
@@ -36,8 +43,7 @@ public class CadastroPessoalActivity extends AppCompatActivity {
         });
     }
 
-    private void Prosseguir()
-    {
+    private void Prosseguir() {
         if (!Valido()) {
             onLoginFailed();
             return;
@@ -48,8 +54,7 @@ public class CadastroPessoalActivity extends AppCompatActivity {
         onLoginSuccess();
     }
 
-    private boolean Valido()
-    {
+    private boolean Valido() {
         boolean valid = true;
 
         String nome = _nomeText.getText().toString();
@@ -62,24 +67,22 @@ public class CadastroPessoalActivity extends AppCompatActivity {
         if (nome.isEmpty()) {
             _nomeText.setError("Digite seu nome!");
             valid = false;
-        } else if (logradouro.isEmpty()){
+        } else if (logradouro.isEmpty()) {
             _logradouroText.setError("Digite o logradouro!");
             valid = false;
-        } else if (numero.isEmpty()){
+        } else if (numero.isEmpty()) {
             _NumeroText.setError("Digite o número!");
             valid = false;
-        } else if (bairro.isEmpty()){
+        } else if (bairro.isEmpty()) {
             _BairroText.setError("Digite seu bairro!");
             valid = false;
-        } else if (cidade.isEmpty()){
+        } else if (cidade.isEmpty()) {
             _CidadeText.setError("Digite sua cidade!");
             valid = false;
-        } else if (telefone.isEmpty()){
+        } else if (telefone.isEmpty()) {
             _TelefoneText.setError("Digite seu telefone!");
             valid = false;
-        }
-        else
-        {
+        } else {
             _nomeText.setError(null);
             _logradouroText.setError(null);
             _NumeroText.setError(null);
@@ -91,6 +94,11 @@ public class CadastroPessoalActivity extends AppCompatActivity {
         return valid;
     }
 
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
+
     public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "Erro ao prosseguir!", Toast.LENGTH_LONG).show();
 
@@ -98,14 +106,14 @@ public class CadastroPessoalActivity extends AppCompatActivity {
     }
 
     public void onLoginSuccess() {
-        Intent cadastroCurso = new Intent( this, CadastroCursoActivity.class);
+        Intent cadastroCurso = new Intent(this, CadastroCursoActivity.class);
 
         cadastroCurso.putExtra("nome", _nomeText.getText().toString());
-        cadastroCurso.putExtra("logradouro",_logradouroText.getText().toString());
-        cadastroCurso.putExtra("numero",_NumeroText.getText().toString());
-        cadastroCurso.putExtra("bairro",_BairroText.getText().toString());
-        cadastroCurso.putExtra("cidade",_CidadeText.getText().toString());
-        cadastroCurso.putExtra("telefone",_TelefoneText.getText().toString());
+        cadastroCurso.putExtra("logradouro", _logradouroText.getText().toString());
+        cadastroCurso.putExtra("numero", _NumeroText.getText().toString());
+        cadastroCurso.putExtra("bairro", _BairroText.getText().toString());
+        cadastroCurso.putExtra("cidade", _CidadeText.getText().toString());
+        cadastroCurso.putExtra("telefone", _TelefoneText.getText().toString());
 
         startActivity(cadastroCurso);
 

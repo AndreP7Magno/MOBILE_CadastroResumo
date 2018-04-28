@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -48,19 +49,51 @@ public class CadastroCursoActivity extends AppCompatActivity {
     }
 
     private void btnMostrarClick(View view) {
-        Intent resumo = new Intent( this, ResumoActivity.class);
+        if(Valida())
+        {
+            Intent resumo = new Intent( this, ResumoActivity.class);
 
+            resumo.putExtra("txtNome",txtNome.getText().toString());
+            resumo.putExtra("txtLogradouro",txtLogradouro.getText().toString());
+            resumo.putExtra("txtNumero",txtNumero.getText().toString());
+            resumo.putExtra("txtBairro",txtBairro.getText().toString());
+            resumo.putExtra("txtCidade",txtCidade.getText().toString());
+            resumo.putExtra("txtTelefone",txtTelefone.getText().toString());
+            resumo.putExtra("txtCurso",txtCurso.getText().toString());
+            resumo.putExtra("txtTurno",txtTurno.getText().toString());
+            resumo.putExtra("txtFaculdade",txtFaculdade.getText().toString());
 
-        resumo.putExtra("txtNome",txtNome.getText().toString());
-        resumo.putExtra("txtLogradouro",txtLogradouro.getText().toString());
-        resumo.putExtra("txtNumero",txtNumero.getText().toString());
-        resumo.putExtra("txtBairro",txtBairro.getText().toString());
-        resumo.putExtra("txtCidade",txtCidade.getText().toString());
-        resumo.putExtra("txtTelefone",txtTelefone.getText().toString());
-        resumo.putExtra("txtCurso",txtCurso.getText().toString());
-        resumo.putExtra("txtTurno",txtTurno.getText().toString());
-        resumo.putExtra("txtFaculdade",txtFaculdade.getText().toString());
+            startActivity(resumo);
+        }
+        else{
 
-        startActivity(resumo);
+            onLoginFailed();
+        }
     }
+
+    private boolean Valida() {
+        boolean valid = true;
+
+        String curso = txtCurso.getText().toString();
+        String turno = txtTurno.getText().toString();
+        String faculdade = txtFaculdade.getText().toString();
+
+        if (curso.isEmpty()) {
+            txtCurso.setError("Digite seu nome!");
+            valid = false;
+        } else if (turno.isEmpty()){
+            txtTurno.setError("Digite o logradouro!");
+            valid = false;
+        } else if (faculdade.isEmpty()){
+            txtFaculdade.setError("Digite o número!");
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    private void onLoginFailed() {
+        Toast.makeText(getBaseContext(), "Preencha todos os campos!", Toast.LENGTH_LONG).show();
+    }
+
 }

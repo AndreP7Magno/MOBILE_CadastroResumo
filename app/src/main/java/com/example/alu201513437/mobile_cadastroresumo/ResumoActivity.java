@@ -10,12 +10,18 @@ import butterknife.InjectView;
 
 public class ResumoActivity extends AppCompatActivity {
 
-    @InjectView(R.id.txtNome) EditText txtNome;
-    @InjectView(R.id.txtLogradouroNumero) EditText txtLogradouroNumero;
-    @InjectView(R.id.txtBairroCidade) EditText txtBairroCidade;
-    @InjectView(R.id.txtTelefone) EditText txtTelefone;
-    @InjectView(R.id.txtFaculdade) EditText txtFaculdade;
-    @InjectView(R.id.txtCursoTurno) EditText txtCursoTurno;
+    @InjectView(R.id.txtNome)
+    EditText txtNome;
+    @InjectView(R.id.txtLogradouroNumero)
+    EditText txtLogradouroNumero;
+    @InjectView(R.id.txtBairroCidade)
+    EditText txtBairroCidade;
+    @InjectView(R.id.txtTelefone)
+    EditText txtTelefone;
+    @InjectView(R.id.txtFaculdade)
+    EditText txtFaculdade;
+    @InjectView(R.id.txtCursoTurno)
+    EditText txtCursoTurno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

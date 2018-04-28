@@ -78,14 +78,20 @@ public class CadastroCursoActivity extends AppCompatActivity {
         String faculdade = txtFaculdade.getText().toString();
 
         if (curso.isEmpty()) {
-            txtCurso.setError("Digite seu nome!");
+            txtCurso.setError("Digite seu curso!");
             valid = false;
         } else if (turno.isEmpty()){
-            txtTurno.setError("Digite o logradouro!");
+            txtTurno.setError("Digite o turno!");
             valid = false;
         } else if (faculdade.isEmpty()){
-            txtFaculdade.setError("Digite o número!");
+            txtFaculdade.setError("Digite a sua faculdade!");
             valid = false;
+        }
+        else
+        {
+            txtCurso.setError(null);
+            txtTurno.setError(null);
+            txtFaculdade.setError(null);
         }
 
         return valid;

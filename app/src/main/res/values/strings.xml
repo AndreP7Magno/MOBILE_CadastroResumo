@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">MOBILE_CadastroResumo</string>
-    <string name="title_activity_cadastro_pessoal">CadastroPessoalActivity</string>
-    <string name="title_activity_cadastro_curso">CadastroCursoActivity</string>
-    <string name="title_activity_resumo">ResumoActivity</string>
+    <string name="app_name">Cadastro Gastadeira</string>
+    <string name="title_activity_cadastro_pessoal">Cadastro Pessoal</string>
+    <string name="title_activity_cadastro_curso">Cadastro Curso</string>
+    <string name="title_activity_resumo">Resumo</string>
 </resources>

@@ -15,9 +15,18 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="120dp"
+        android:paddingTop="100dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Digite os dados do curso"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -28,6 +37,7 @@
             <EditText android:id="@+id/txtCurso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
                 android:hint="Curso" />
 
         </android.support.design.widget.TextInputLayout>
@@ -41,6 +51,7 @@
             <EditText android:id="@+id/txtTurno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
                 android:hint="Turno"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -55,6 +66,7 @@
             <EditText android:id="@+id/txtFaculdade"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
                 android:hint="Faculdade"/>
 
         </android.support.design.widget.TextInputLayout>
@@ -63,6 +75,8 @@
             android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
             android:text="Enviar" />
     </LinearLayout>
 

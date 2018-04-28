@@ -33,7 +33,7 @@ public class ResumoActivity extends AppCompatActivity {
 
         txtNome.setText("Nome: " + cadastroCurso.getStringExtra("txtNome"));
         txtLogradouroNumero.setText("Logradouro/Número:" + cadastroCurso.getStringExtra("txtLogradouro") + " - " + cadastroCurso.getStringExtra("txtNumero"));
-        txtBairroCidade.setText("Bairro/Cidade" + cadastroCurso.getStringExtra("txtBairro") + " - " + cadastroCurso.getStringExtra("txtCidade"));
+        txtBairroCidade.setText("Bairro/Cidade:" + cadastroCurso.getStringExtra("txtBairro") + " - " + cadastroCurso.getStringExtra("txtCidade"));
         txtTelefone.setText("Telefone:" + cadastroCurso.getStringExtra("txtTelefone"));
         txtFaculdade.setText("Faculdade:" + cadastroCurso.getStringExtra("txtFaculdade"));
         txtCursoTurno.setText("Curso/Turno:" + cadastroCurso.getStringExtra("txtCurso") + " - " + cadastroCurso.getStringExtra("txtTurno"));

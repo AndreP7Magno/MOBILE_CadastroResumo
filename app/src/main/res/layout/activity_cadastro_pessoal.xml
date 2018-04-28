@@ -19,7 +19,7 @@
             android:text="Digite os seus dados"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
             />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -47,7 +47,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:hint="Endereço"/>
+                android:text="Endereço"
+                android:textColor="@color/colorPrimaryDark"/>
             
         </android.support.design.widget.TextInputLayout>
 
